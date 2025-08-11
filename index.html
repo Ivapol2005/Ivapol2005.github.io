@@ -1,0 +1,62 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal webpage</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+<body>
+    <header>
+      <br>
+      <div class="header-content">
+        <img src="assets/images/My_photo.png" alt="My photo" class="polaroid-image header-image" title = "It's me">
+        <div class="header-text">
+          <h1 class="header-title">Welcome!</h1>
+          <div class="icon-row">
+            <a href="https://www.linkedin.com/in/ivan-politykin" title="My Linkedin">
+              <img class="contact-button" align="left" alt="My Linkedin" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+            </a>
+            <a href="https://github.com/Ivapol2005" title = "My GitHub">
+              <img class="contact-button" align="left" alt="My Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <br>
+
+    <nav id="table-of-contents">
+      <h2>Table of Contents</h2>
+      <ul></ul>
+    </nav>
+
+    <main>
+        <div id="about-me"></div>
+        <div id="my-skills"></div>
+        <div id="experience"></div>
+        <div id="education"></div>
+        <div id="projects"></div>
+        <div id="contacts"></div>
+    </main>
+
+    <script src="app.js"></script>
+
+    <script>
+      // --- Rndom rotation ---
+      const polaroids = document.querySelectorAll('.polaroid-image');
+
+      polaroids.forEach(image => {
+        const randomRotation = Math.random() * 10 - 5;
+
+        image.style.transform = `rotate(${randomRotation}deg)`;
+      });
+
+    </script>
+</body>
+</html>

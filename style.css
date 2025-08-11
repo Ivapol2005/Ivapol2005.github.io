@@ -1,0 +1,246 @@
+/* style.css */
+@font-face {
+  font-family: 'URW Gotchic';
+  src: url('assets/fonts/URWGothic-Book.otf') format('otf');
+  font-display: swap;
+}
+
+/* Global Styles */
+body {
+  font-family: 'URW Gothic', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #282c34;
+  color: white;
+}
+
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  position: relative;
+  background: #2e3440;
+  color: white;
+  padding: 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/images/code.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(3px);
+  z-index: 0;
+  opacity: 0.3;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // gap: 2rem;
+  // padding: 1rem;
+  // flex-wrap: wrap;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-row {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  background-color: black;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.contact-button {
+  width: 22px;
+  height: 22px;
+  filter: invert(100%) brightness(1.2); /* Makes black icons appear white */
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.2);
+  filter: invert(100%) brightness(1.2);
+  opacity: 1;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // flex: 1 1 250px;
+  // min-width: 200px;
+}
+
+.header-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  position: absolute;
+  left: -4rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin-top: 1em;
+  font-weight: normal;
+}
+
+header h1, header h2, header h3 {
+  color: white;
+  background-color: black;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+a {
+  color: cyan;
+  //color: #4b7cdf;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:not(pre) > code {
+  background-color: #3a3f4b;
+  // color: #f8f8f2;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Table of Contents */
+#table-of-contents {
+  padding: 15px 20px;
+  max-width: 300px;
+}
+
+#table-of-contents h2 {
+  margin-top: 0;
+  border-bottom: 1px solid white;
+}
+
+
+.project-link {
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* On hover: card lifts and shadow deepens */
+.project-link:hover {
+    // transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Link fills the card */
+.project-link a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Image block (top 50%) */
+.link-image {
+    width: 100%;
+    //height: 60%;
+    object-fit: cover;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    // position: relative;
+    z-index: 1;
+}
+
+/* Zoom and dim the image on hover */
+.project-link:hover .link-image {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+/* Text block (bottom 50%) */
+.link-description {
+    height: 40%;
+    background-color: #3a3f4b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Invert text color on hover */
+.project-link:hover .link-description {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+.image-wrapper {
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Polaroid Gallery */
+.polaroid-image {
+  // flex-shrink: 0;
+  width: 20vw;
+  max-width: 150px;
+  min-width: 60px;
+  height: 175px;
+  object-fit: cover;
+  margin-right: 15px;
+  background: #f4f4f4;
+  padding: 15px 15px 50px;
+  // text-align: center;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+  // transition: transform 0.3s ease, width 0.3s ease;
+  // flex-shrink: 1;
+}
